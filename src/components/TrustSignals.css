@@ -1,0 +1,26 @@
+/* src/components/TrustSignals.css */
+
+.trust-signals {
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .trust-signals h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .trust-logos {
+    display: flex;
+    justify-content: center;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-around; */
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .trust-logos img {
+    width: 200px;
+    margin: 0 15px;
+  }
+  

@@ -1,0 +1,85 @@
+.welcome-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('https://images.pexels.com/photos/358636/pexels-photo-358636.jpeg?auto=compress&cs=tinysrgb&w=600') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(3, 3, 3, 0.5); /* Add a semi-transparent overlay for better readability */
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.welcome-content {
+  margin-left: 50px;
+  text-align: left;
+  font-size: large;
+  color: rgb(223, 17, 17);
+  padding: 20px;
+  max-width: 1000px; /* Set a max-width for better layout control */
+  border-radius: 10px;
+  /* background-color: rgba(255, 255, 255, 0.6); Optional: Add background color for better readability */
+  
+}
+
+.welcome-message {
+  font-size: 3em;
+  margin-bottom: 20px;
+  color:beige
+}
+
+.subheading {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color:burlywood
+}
+
+.welcome-description {
+  font-size: 1.2em;
+  line-height: 1.6; /* Improve readability */
+  margin-bottom: 20px;
+  color: black;
+}
+
+.cta-button {
+  padding: 15px 30px;
+  font-size: 1.2em;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  text-align: center; /* Center align text in the button */
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .welcome-message {
+    font-size: 3em;
+  }
+  .subheading {
+    font-size: 1.2em;
+  }
+  .welcome-description {
+    font-size: 1em;
+  }
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+}

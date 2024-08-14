@@ -1,0 +1,38 @@
+/* src/TermsAndConditions.css */
+
+.terms-and-conditions {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .terms-and-conditions h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .terms-and-conditions p {
+    margin-bottom: 20px;
+  }
+  
+  .terms-and-conditions ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .terms-and-conditions li {
+    margin-bottom: 10px;
+  }
+  
+  .terms-and-conditions a {
+    color: #1a73e8;
+    text-decoration: none;
+  }
+  
+  .terms-and-conditions a:hover {
+    text-decoration: underline;
+  }
+  

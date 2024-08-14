@@ -1,53 +1,118 @@
 .header {
-  background-color: #ffffff;
-  border-bottom: 1px solid #ddd;
-  padding: 10px 20px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-between; /* Ensures that logo and buttons are on opposite sides */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  background-color: #3baaf5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  /* border-bottom: 2px solid #424d58; */
 }
 
 .header-content {
   display: flex;
   align-items: center;
   width: 100%;
-  justify-content: space-between; /* Keeps the logo and navigation buttons on opposite sides */
+  /* justify-content: space-between; */
 }
 
-.logo-and-name {
+.logo {
   display: flex;
   align-items: center;
 }
 
-.header-logo {
-  width: 150px; /* Adjust size as needed */
-  height: auto;
-  margin-right: 15px;
+.logo-img {
+  height: 40px;
+  margin-right: 10px;
 }
 
-h1 {
-  font-size: 4em; /* Increased size */
-  color: #2c3e50;
-  margin: 0;
+.logo-text {
+  font-size: 24px;
+  color: #007bff;
+  /* font-weight: bold; */
 }
 
-nav {
-  display: flex;
-  gap: 10px;
-}
-
-button {
-  background-color: #007BFF;
-  color: white;
+.menu-toggle {
+  display: none;
+  background: none;
   border: none;
-  border-radius: 4px;
-  padding: 10px 15px;
-  font-size: 1em;
+  font-size: 24px;
   cursor: pointer;
+  color: #333;
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.nav-bar a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 15px;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
   transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #0056b3;
+.nav-bar a:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-menu a:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.dropdown.open .dropdown-menu {
+  display: block; /* Show when dropdown is open */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    display: none;
+  }
+
+  .nav-bar.open {
+    display: flex;
+  }
+
+  .nav-bar a {
+    margin: 10px 0;
+    width: 100%;
+  }
 }

@@ -1,60 +1,50 @@
-.services {
-  padding: 40px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
-  line-height: 1.8;
-}
-
-h2 {
-  text-align: center;
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  color: #2c3e50;
-}
-
-.services-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.service {
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 20px;
-  max-width: 300px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.service-icon {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 15px;
-}
-
-h3 {
-  font-size: 1.5em;
-  margin-bottom: 15px;
-  color: #007BFF;
-}
-
-p {
-  font-size: 1em;
-  color: #666;
-}
-
-@media (max-width: 768px) {
-  .services-list {
-    flex-direction: column;
-    align-items: center;
+/* src/components/Services.css */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 3fr));
+    gap: 45px;
+    padding: 20px;
   }
-
-  .service {
-    max-width: 100%;
-    margin: 10px 0;
+  
+  .service-card {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust the height as needed */
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
-}
+  
+  .service-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .service-image {
+    width: 100%;
+    height: 60%; /* Adjust the height as needed */
+    object-fit: cover;
+  }
+  
+  .service-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .service-details {
+    text-align: center;
+  }
+  
+  .service-details h2 {
+    margin: 0 0 10px;
+    font-size: 18px;
+  }
+  

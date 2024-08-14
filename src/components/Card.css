@@ -1,0 +1,86 @@
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 16px;
+  width: calc(50% - 32px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  position: relative;
+}
+
+.property-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.property-status,
+.property-featured {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.property-featured {
+  top: 32px;
+  background: green;
+}
+
+.card-body {
+  padding: 16px;
+}
+
+.card-body h2 {
+  font-size: 20px;
+  margin: 0 0 8px;
+}
+
+.price {
+  color: orange;
+  font-size: 18px;
+  margin: 0 0 16px;
+}
+
+.details {
+  display: flex;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.like-button,
+.preview-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.like-button:hover,
+.preview-button:hover {
+  color: orange;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: calc(100% - 32px);
+  }
+}

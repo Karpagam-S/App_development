@@ -1,33 +1,68 @@
-// src/components/Header.js
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
+import { FaHome, FaInfoCircle, FaList, FaQuestionCircle, FaBlog, FaEnvelope, FaBars, FaUser, FaTools } from 'react-icons/fa';
 import './Header.css';
 
 const Header = () => {
-  const navigate = useNavigate();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+  const menuRef = useRef(null);
 
-  const handleUserPortalClick = () => {
-    navigate('/user-login');
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleAdminPortalClick = () => {
-    navigate('/admin-login');
+  const toggleDropdown = (e) => {
+    e.stopPropagation(); // Prevent event bubbling
+    setIsDropdownOpen(!isDropdownOpen);
   };
+
+  const handleClickOutside = (e) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(e.target) &&
+        menuRef.current && !menuRef.current.contains(e.target)) {
+      setIsDropdownOpen(false);
+      setIsMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <header className="header">
       <div className="header-content">
-        <div className="logo-and-name">
-          <img
-            src="https://static.vecteezy.com/system/resources/thumbnails/023/495/230/small_2x/real-estate-logo-1-free-png.png"
-            alt="Cealum Premises Logo"
-            className="header-logo"
-          />
-          <h1>Cealum Premises</h1>
+        <div className="logo">
+          <img src="/images/logo.png" alt="Company Logo" className="logo-img" />
+          <h1 className="logo-text">Caelum</h1>
         </div>
-        <nav>
-          <button onClick={handleUserPortalClick}>User Portal</button>
-          <button onClick={handleAdminPortalClick}>Admin Portal</button>
+
+        <button className="menu-toggle" onClick={toggleMenu} ref={menuRef}>
+          <FaBars />
+        </button>
+
+        <nav className={`nav-bar ${isMenuOpen ? 'open' : ''}`}>
+          <a href="/" onClick={toggleMenu}><FaHome /> Home </a>
+          <a href="/about-us" onClick={toggleMenu}><FaInfoCircle /> About Us </a>
+          <a href="/list" onClick={toggleMenu}><FaList /> Listings </a>
+          <a href="/services" onClick={toggleMenu}><FaTools /> Services </a>
+          <div className={`dropdown ${isDropdownOpen ? 'open' : ''}`} onClick={toggleDropdown} ref={dropdownRef}>
+            <a href="#" className="dropdown-toggle">
+              <FaUser /> Login
+            </a>
+            {isDropdownOpen && (
+              <div className="dropdown-menu">
+                <a href="/user/login" onClick={toggleMenu}>User Login</a>
+                <a href="/owner/login" onClick={toggleMenu}>Owner Login</a>
+              </div>
+            )}
+          </div>
+          <a href="/faq" onClick={toggleMenu}><FaQuestionCircle /> FAQ </a>
+          <a href="/blog" onClick={toggleMenu}><FaBlog /> Blog </a>
+          <a href="/contactus" onClick={toggleMenu}><FaEnvelope /> Contact </a>
         </nav>
       </div>
     </header>

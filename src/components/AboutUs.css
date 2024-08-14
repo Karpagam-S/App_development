@@ -1,36 +1,83 @@
-.about-us {
-  padding: 40px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
-  line-height: 1.8;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
 }
 
-h2 {
+.header {
+  /* background: #98c2e3; */
+  color: white;
+  padding: 20px;
   text-align: center;
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  color: #2c3e50;
 }
 
-p {
-  text-align:justify;
-  font-size: 1.2em;
-  max-width: 800px;
+.about {
+  width:100%;
+  padding: 20px;
+  text-align: center;
+}
+
+.stats, .team, .testimonials, .video, .timeline, .awards {
+  padding: 20px;
+  background: white;
+  margin: 20px 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  
+}
+
+.stats-container, .team-container, .testimonials-container, .timeline-container, .awards-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.stat-item, .team-member, .testimonial-item, .timeline-item, .award-item {
+  flex: 1 1 200px;
+  margin: 10px;
+  padding: 20px;
+  background: #f4f4f4;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.stat-item:hover, .team-member:hover, .testimonial-item:hover, .timeline-item:hover, .award-item:hover {
+  transform: translateY(-10px);
+}
+
+.icon-container {
+  margin-bottom: 10px;
+}
+
+.team-member img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.video video {
+  width: 100%;
+  max-width: 600px;
+  display: block;
   margin: 0 auto;
-  color: #4a4a4a;
 }
 
+.footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Responsive styles */
 @media (max-width: 768px) {
-  .about-us {
-    padding: 20px;
+  .stats-container, .team-container, .testimonials-container, .timeline-container, .awards-container {
+    flex-direction: column;
+    align-items: center;
   }
 
-  h2 {
-    font-size: 2em;
-  }
-
-  p {
-    font-size: 1em;
+  .stat-item, .team-member, .testimonial-item, .timeline-item, .award-item {
+    flex: 1 1 100%;
   }
 }

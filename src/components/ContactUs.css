@@ -1,0 +1,114 @@
+/* ContactUs.css */
+
+.contact-page {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .contact-form,
+  .owner-info,
+  .location-map {
+    margin-bottom: 40px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin: 10px 0 5px;
+  }
+  
+  input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .form-status {
+    margin-top: 10px;
+    color: green;
+  }
+  
+  .owner-info {
+    text-align: center;
+  }
+  
+  .info {
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .info h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #333;
+  }
+  
+  .info p {
+    margin: 8px 0;
+    font-size: 1em;
+    color: #666;
+  }
+  
+  .info .fa {
+    margin-right: 10px;
+    color: #007bff;
+  }
+  
+  .location-map iframe {
+    width: 100%;
+    height: 400px;
+    border: 0;
+  }
+  
+  .address-container {
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 20px;
+  }
+  
+  .address-container h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #333;
+  }
+  
+  .address-container p {
+    margin: 10px 0;
+    font-size: 1em;
+    color: #666;
+  }
+  
+  .address-container .fa {
+    color: #007bff;
+  }
+  

@@ -1,0 +1,88 @@
+/* General Container Styling */
+.admin-container {
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 0 20px;
+}
+
+/* Header Styling */
+.admin-header {
+    padding: 20px 0;
+    border-bottom: 2px solid #f0f0f0;
+    text-align: center;
+}
+
+.admin-header h1 {
+    margin: 0;
+    color: #2c3e50;
+}
+
+/* Navigation Bar Styling */
+.admin-nav {
+    margin: 20px 0;
+}
+
+.admin-nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.admin-nav li {
+    margin: 10px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #3498db;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #ecf0f1;
+    transform: scale(1.05);
+}
+
+.nav-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.nav-text {
+    font-size: 16px;
+}
+
+/* Logout Button Styling */
+.logout-button {
+    display: flex;
+    align-items: center;
+    background-color: #e74c3c;
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.logout-button:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+.logout-icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.logout-text {
+    font-size: 16px;
+}

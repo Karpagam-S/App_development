@@ -1,50 +1,44 @@
-// src/components/Services.js
+// src/components/ServicesPage.js
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Services.css';
 
 const services = [
-  {
-    title: 'Automated Rent Collection',
-    description: 'Simplify payments with our integrated system. Set up recurring payments, send automatic reminders, and reduce late fees effortlessly. Our secure platform ensures timely and accurate rent collection, giving both landlords and tenants peace of mind. Easily track payment history and generate receipts for record-keeping.',
-    icon: 'https://www.shutterstock.com/image-vector/checkmark-like-cash-flow-icon-600nw-2342332139.jpg'
-  },
-  {
-    title: 'Maintenance Request Management',
-    description: 'Track and resolve issues quickly with our intuitive maintenance request system. Tenants can easily submit maintenance requests through their online portal, and you can assign tasks to maintenance staff instantly. Stay updated with real-time notifications and track the progress of each request until completion. Maintain a high standard of property upkeep and tenant satisfaction.',
-    icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT622ybyKjHWg2_ukbsGo2pitu9XiYv0lpoAQ&s'
-  },
-  {
-    title: 'Tenant Screening',
-    description: 'Find the best tenants with ease using our comprehensive screening services. We perform detailed background checks, including credit reports, criminal history, and rental history verification. Our screening process helps you identify reliable tenants who will pay rent on time and take care of your property. Reduce the risk of problematic tenants and minimize turnover rates.',
-    icon: 'https://cdn-icons-png.freepik.com/512/9631/9631221.png'
-  },
-  {
-    title: 'Financial Reporting',
-    description: 'Get detailed insights into your property\'s performance with our advanced financial reporting tools. Access income statements, balance sheets, and cash flow analyses to understand your financial health. Our customizable reports help you track expenses, forecast future revenue, and make informed decisions to optimize your investment. Stay organized with easy-to-read, professional-grade financial reports.',
-    icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKayUzLWColYah2fenknnoM7cnQjRa6QO-lg&s'
-  },
-  {
-    title: 'Communication Tools',
-    description: 'Keep in touch with tenants effortlessly using our integrated communication tools. Send announcements, updates, and reminders through email or SMS directly from the platform. Our messaging system ensures all communications are documented and easily accessible. Foster positive tenant relationships and enhance transparency with effective and efficient communication channels.',
-    icon: 'https://cdn-icons-png.freepik.com/512/3715/3715755.png'
-  },
+  { id: 1, title: 'Tenant Management', image: 'https://spintly.com/wp-content/uploads/2023/08/TENANT-ILLUSTRATION.png', path: '/service-one' },
+  { id: 2, title: 'Financial Management', image: 'https://uploads-ssl.webflow.com/5c67c14680da2a42766b43bd/5c7457256cec1034dbdb5b7f_financial-management.png', path: '/service-two' },
+  { id: 3, title: 'Maintenance and Repairs', image: 'https://5.imimg.com/data5/YT/PT/MY-28334900/repair-and-maintenance-service.jpg', path: '/service-one' },
+  { id: 4, title: 'Communication and Notifications', image: 'https://cdn5.vectorstock.com/i/1000x1000/48/79/communication-concept-notification-application-vector-21604879.jpg', path: '/Communication' },
+  { id: 5, title: 'Document Management', image: 'https://idigitalit.com/wp-content/uploads/2024/03/Document-Management-System-1.png', path: '/service-one' },
+  { id: 6, title: 'Reporting and Analytics', image: 'https://concentrasolutions.com/wp-content/uploads/2020/11/AdobeStock_123597067-scaled-2560x1280.jpeg', path: '/service-two' },
+  // Add more services as needed
 ];
 
 const Services = () => {
+  const navigate = useNavigate();
+
+  const handleCardClick = (path) => {
+    navigate(path);
+  };
+
   return (
-    <section className="services">
-      <h2>Our Services</h2>
-      <div className="services-list">
-        {services.map((service, index) => (
-          <div key={index} className="service">
-            <img src={service.icon} alt={`${service.title} icon`} className="service-icon" />
-            <h3>{service.title}</h3>
-            <p>{service.description}</p>
+    <div className="services-container">
+      {services.map((service) => (
+        <div
+          key={service.id}
+          className="service-card"
+          onClick={() => handleCardClick(service.path)}
+        >
+          <img src={service.image} alt={service.title} className="service-image" />
+          <div className="service-overlay">
+            <div className="service-details">
+              <h2>{service.title}</h2>
+              {/* <p>{service.description}</p> */}
+            </div>
           </div>
-        ))}
-      </div>
-    </section>
+        </div>
+      ))}
+    </div>
   );
-}
+};
 
 export default Services;

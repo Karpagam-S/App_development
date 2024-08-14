@@ -1,28 +1,43 @@
-// src/components/Features.js
 import React from 'react';
-
-const features = [
-  { title: 'Automated Rent Collection', description: 'Simplify payments with our integrated system.' },
-  { title: 'Maintenance Request Management', description: 'Track and resolve issues quickly.' },
-  { title: 'Tenant Screening', description: 'Find the best tenants with ease.' },
-  { title: 'Financial Reporting', description: 'Get detailed insights into your property\'s performance.' },
-  { title: 'Communication Tools', description: 'Keep in touch with tenants effortlessly.' },
-];
+import { Container, Row, Col, Card } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Features = () => {
+  const features = [
+    {
+      title: 'Smart Home Integration',
+      description: 'Control your home with a touch of a button, integrate smart home devices seamlessly.',
+      icon: '🏡',
+    },
+    {
+      title: 'Virtual Tours',
+      description: 'Experience properties like never before with our immersive virtual tours.',
+      icon: '🎥',
+    },
+    {
+      title: 'Advanced Search',
+      description: 'Find your dream home with our advanced search features and filters.',
+      icon: '🔍',
+    },
+  ];
+
   return (
-    <section className="features">
-      <h2>Features</h2>
-      <div className="features-list">
+    <Container id="features" className="py-5">
+      <h2 className="text-center mb-4">Innovative Features</h2>
+      <Row>
         {features.map((feature, index) => (
-          <div key={index} className="feature">
-            <h3>{feature.title}</h3>
-            <p>{feature.description}</p>
-          </div>
+          <Col md={4} key={index} className="mb-4">
+            <Card className="h-100">
+              <Card.Body className="text-center">
+                <Card.Title>{feature.icon} {feature.title}</Card.Title>
+                <Card.Text>{feature.description}</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
         ))}
-      </div>
-    </section>
+      </Row>
+    </Container>
   );
-}
+};
 
 export default Features;
